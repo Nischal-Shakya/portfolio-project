@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+      <nav class="navigation">
+        <div class="container">
+            <h1><a href="#">Alex Morgan</a></h1>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+        <button onclick="toggleTheme()">🌙</button>
+        </div>
+      </nav>
+  </header>
+
+  <section id="about">
+    <div class="about-container">
+      <img src="https://xsgames.co/randomusers/assets/images/favicon.png" alt="Profile Picture" id="profile-picture" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <h3 id="greeting-message"></h3>
+        <p>
+          Hi, I'm a passionate Mobile App Developer with over 4 years of experience in building
+          high-quality, user-friendly applications. I specialize in both native and cross-platform mobile app
+          development using tools and frameworks like React Native, Flutter, and Swift. My main goal is to create
+          intuitive, efficient, and scalable apps for both iOS and Android platforms.
+
+          I have worked on various mobile app projects, ranging from social media platforms to other tools,
+          always focusing on performance, scalability, and a great user experience. I’m constantly exploring new
+          technologies and refining my skills to stay up to date in the ever-changing mobile development
+          landscape.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div id="category-buttons">
+      <button class="category-btn" onclick="filterProjects('all')">All</button>
+      <button class="category-btn" onclick="filterProjects('web')">Web</button>
+      <button class="category-btn" onclick="filterProjects('mobile app')">Mobile App</button>
+    </div>
+    <div id="projects-list"></div>
+
+    <div id="add-buttons">
+      <button onclick="toggleProjectForm()">Add Project</button>
+      <button onclick="toggleCategoryForm()">Add Category</button>
+    </div>
+
+    <div id="project-form" style="display: none;">
+      <h3>Add New Project</h3>
+      <form onsubmit="addProject(event)">
+        <label for="project-title">Title:</label><br>
+        <input type="text" id="project-title" required><br><br>
+        <label for="project-description">Description:</label><br>
+        <textarea id="project-description" required></textarea><br><br>
+        <label for="project-date">Date:</label><br>
+        <input type="date" id="project-date" required><br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div id="category-form" style="display: none;">
+      <input type="text" id="category-input" placeholder="Add new category" />
+      <button onclick="addCategory()">Add Category</button>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <h2>Testimonials</h2>
+    <div id="testimonials-list"></div>
+    <div id="add-buttons">
+        <button onclick="toggleTestimonialForm()">Add Testimonial</button>
+    </div>
+    <div id="testimonial-form" style="display: none;">
+      <h3>Add Testimonial</h3>
+      <form onsubmit="addTestimonial(event)">
+        <label for="testimonial-user">User Name:</label><br>
+        <input type="text" id="testimonial-user" required><br><br>
+        <label for="testimonial-description">Testimonial:</label><br>
+        <textarea id="testimonial-description" required></textarea><br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <button id="scroll-to-top-btn">↑</button>
+
+  <footer>
+    <p>&copy; 2025 My Portfolio. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
